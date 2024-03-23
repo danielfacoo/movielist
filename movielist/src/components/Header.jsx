@@ -7,6 +7,10 @@ const Header = () => {
                 <div className="brand">
                     İzlenecekler
                 </div>
+                <ul className="nav-links">
+                    <li>İzlenenler</li>
+                    <li className="fas fa-plus"></li>
+                </ul>
             </div>
         </div>
     </header>
