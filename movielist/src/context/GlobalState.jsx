@@ -23,6 +23,7 @@ export const GlobalProvider = (props) =>{
  
     return (
         <GlobalContext.Provider value = {{
+            watchlist:state.watchlist,
             addMovieToWatchlist,
         }}>
             {props.children}
