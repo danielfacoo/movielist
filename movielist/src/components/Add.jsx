@@ -1,6 +1,14 @@
+import { useState } from "react"
 
 
 const Add = () => {
+    const[query, setQuery] = useState("");
+    
+    function onChange (e) {
+        setQuery(e.target.value)
+
+    }
+
   return (
     <div className="add-page">
         <div className="container">
@@ -9,9 +17,12 @@ const Add = () => {
             <div className="titles">
                 <h1>Hoş Geldiniz.</h1>
                 <h2>Milyonlarca film, TV şovu ve keşfedilecek kişi. Şimdi keşfedin.</h2>
+                {query}
                 </div>
                 <div className="input-wrapper">
-            <input type="text" placeholder="Film, dizi, kişi ara ..."/>
+            <input type="text" 
+            onChange={onChange}
+            placeholder="Film, dizi, kişi ara ..."/>
             </div>
             </div>
             
