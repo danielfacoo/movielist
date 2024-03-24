@@ -8,7 +8,7 @@ export const GlobalContext = createContext();
 
 //initial state
 const initialState = {
-    watchlist: [],
+    watchlist: localStorage.getItem("watchlist") ? JSON.parse(localStorage.getItem("watchlist")): [],
     watched: [],
    
 };
