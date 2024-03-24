@@ -1,14 +1,26 @@
 import { useContext } from "react"
 import { GlobalContext } from "../context/GlobalState"
+import MovieCard from "./MovieCard";
 
 
 const Watchlist = () => {
     const {watchlist} = useContext(GlobalContext);
   return (
-    <div>
-        {watchlist.map((movie) => (
-            <h1 key={movie.id}>{movie.title}</h1>
-        ))}
+    <div className="movie-page">
+        <div className="container">
+            <div className="header">
+               <h1 className="heading">İzlenecek Filmler</h1>
+            </div>
+
+            {watchlist.length >0 && (
+                <div className="movie-grid">
+                    {watchlist.map((movie) => (
+                        <MovieCard key={movie.id} movie = {movie}/>
+                    ))}
+                </div>
+            )}
+        </div>
+        
     </div>
   )
 }
