@@ -1,3 +1,4 @@
+import MovieControls from "./MovieControls";
 
 const MovieCard = ({movie}) => {
   return (
@@ -8,8 +9,9 @@ const MovieCard = ({movie}) => {
            ): (
             <div className="filler-poster"></div>
            )}
+           <MovieControls movie = {movie} />
     </div>
-  )
-}
+  );
+};
 
 export default MovieCard
