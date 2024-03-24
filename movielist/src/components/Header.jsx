@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 const Header = () => {
   return (
@@ -5,10 +6,10 @@ const Header = () => {
         <div className="container">
             <div className="inner-content">
                 <div className="brand">
-                    İzlenecekler
+                    <Link to={"/"}>İzlenecekler</Link>
                 </div>
                 <ul className="nav-links">
-                    <li>İzlenenler</li>
+                    <li><Link to={"/watched"}>İzlenenler</Link></li>
                     <li className="fas fa-plus"></li>
                 </ul>
             </div>
