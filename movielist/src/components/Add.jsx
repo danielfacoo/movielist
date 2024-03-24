@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ResultCart from "./ResultCart";
 
 
 const Add = () => {
@@ -37,9 +38,13 @@ fetch(
             onChange={onChange}
             placeholder="Film, dizi, kişi ara ..."/>
             </div>
-            {results.map((movie) =>(
-                <h1 key={movie.id}>{movie.title}</h1>
-            ))}
+            {results.length >0 && (
+                <ul className="results">
+                    {results.map((movie)=>(
+                        <li key={movie.id}><ResultCart movie={movie}/></li>
+                    ))}
+                </ul>
+            )}
             </div>
             
         </div>
