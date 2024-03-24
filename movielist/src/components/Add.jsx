@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import ResultCart from "./ResultCart";
+import { GlobalContext } from "../context/GlobalState";
 
 
 const Add = () => {
+    const {faruk} = useContext(GlobalContext)
     const[query, setQuery] = useState("");
     const [results, setResults] = useState([]);
     
@@ -30,7 +32,7 @@ fetch(
             <div className="titles">
                 <h1>Hoş Geldiniz.</h1>
                 <h2>Milyonlarca film, TV şovu ve keşfedilecek kişi. Şimdi keşfedin.</h2>
-                
+                <h1>{faruk}</h1>
                 </div>
                 <div className="input-wrapper">
             <input type="text" 
