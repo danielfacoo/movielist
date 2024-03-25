@@ -21,6 +21,7 @@ export const GlobalProvider = (props) =>{
     //local storage
     useEffect(() => {
         localStorage.setItem("watchlist", JSON.stringify(state.watchlist));
+        localStorage.setItem("watched", JSON.stringify(state.watched));
       
       
     }, [state]);
@@ -36,7 +37,11 @@ const removeMovieFromWatchlist = (id) => {
 const addMovieToWatched = (movie) => {
     dispatch({type: "ADD_MOVIE_TO_WATCHED", payload:movie})
 }
- 
+ //movie button from watched
+ const moveToWatchlist = (movie) => {
+    dispatch({type: "MOVE_TO_WATCHLIST", payload:movie})
+
+ }
     return (
         <GlobalContext.Provider value = {{
             watchlist:state.watchlist,
@@ -44,6 +49,7 @@ const addMovieToWatched = (movie) => {
             addMovieToWatchlist,
             removeMovieFromWatchlist,
             addMovieToWatched,
+            moveToWatchlist,
         }}>
             {props.children}
         </GlobalContext.Provider>

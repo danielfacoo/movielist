@@ -24,6 +24,14 @@ export default  (state,action) => {
                         watched:[...state.watched, action.payload]
 
                     }
+                    //move to watchlist from watched
+                    case "MOVE_TO_WATCHLIST":
+                    return {
+                        ...state,
+                        watched:state.watched.filter((movie) => movie.id !==action.payload.id),
+                        watchlist:[...state.watchlist, action.payload]
+
+                    }
             default:
                 return state;
     }

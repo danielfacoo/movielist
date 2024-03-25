@@ -15,7 +15,7 @@ const Watchlist = () => {
             {watchlist.length >0 && (
                 <div className="movie-grid">
                     {watchlist.map((movie) => (
-                        <MovieCard key={movie.id} movie = {movie}/>
+                        <MovieCard key={movie.id} movie = {movie} type = {"watchlist"}/>
                     ))}
                 </div>
             )}
