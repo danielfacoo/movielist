@@ -40,6 +40,7 @@ const addMovieToWatched = (movie) => {
     return (
         <GlobalContext.Provider value = {{
             watchlist:state.watchlist,
+            watched:state.watched,
             addMovieToWatchlist,
             removeMovieFromWatchlist,
             addMovieToWatched,
