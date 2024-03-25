@@ -2,9 +2,18 @@ import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
 const ResultCart = ({movie}) => {
-    const {watchlist,addMovieToWatchlist} = useContext(GlobalContext);
-    //disabled button
-    const storedMovie = watchlist.find ((o) => o.id  === movie.id);
+    const {watchlist,watched,addMovieToWatchlist,addMovieToWatched} = useContext(GlobalContext);
+
+    //disabled button watched
+    const storedMovieWatched = watched.find ((o) => o.id  === movie.id);
+
+
+    //disabled button watchlist
+    const storedMovie = watchlist.find ((o) => o.id  === movie.id) ? true :
+    storedMovieWatched ? true : false; ;
+
+    
+
   return (
     //movie images
     <div className="result-card">
@@ -33,6 +42,12 @@ const ResultCart = ({movie}) => {
                  onClick={() => addMovieToWatchlist(movie)}>
                     Add to Watchlist
                 </button>
+                {/* add to watchedbutton */}
+                <button className="btn" disabled = {storedMovieWatched}
+                 onClick={() => addMovieToWatched(movie)}>
+                    Add to Watched
+                </button>
+                
             </div>
         </div>
     </div>
