@@ -10,8 +10,14 @@ const Watched = () => {
         <div className="container">
             <div className="header">
                <h1 className="heading">İzlenecek Filmler</h1>
+
+                 {/* Count film */}
+              <div className="count-pill">
+                {watched.length} {watched.length < 2 ? "Movie" : "Movies"}
+              </div>
             </div>
 
+              
             {watched.length >0 ? (
                 <div className="movie-grid">
                     {watched.map((movie) => (
