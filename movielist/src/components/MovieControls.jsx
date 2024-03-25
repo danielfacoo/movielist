@@ -1,12 +1,17 @@
+import { useContext } from "react"
+import { GlobalContext } from "../context/GlobalState"
 
-const MovieControls = () => {
+const MovieControls = ({movie}) => {
+  //delete movie on watchlist
+  const {removeMovieFromWatchlist} = useContext(GlobalContext);
   return (
+    // add button on watched
     <div className="inner-card-controls">
         <button className="ctrl-btn">
             <i className="fa-fw far fa-eye"></i>
         </button>
-
-        <button className="ctrl-btn">
+      {/* //delete movie button */}
+        <button className="ctrl-btn" onClick={() => removeMovieFromWatchlist(movie.id)}>
             <i className="fa-fw fa fa-times"></i>
         </button>
     </div>
