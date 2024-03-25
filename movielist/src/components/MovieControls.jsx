@@ -3,11 +3,11 @@ import { GlobalContext } from "../context/GlobalState"
 
 const MovieControls = ({movie}) => {
   //delete movie on watchlist
-  const {removeMovieFromWatchlist} = useContext(GlobalContext);
+  const {removeMovieFromWatchlist,addMovieToWatched} = useContext(GlobalContext);
   return (
     // add button on watched
     <div className="inner-card-controls">
-        <button className="ctrl-btn">
+        <button className="ctrl-btn" onClick={() =>addMovieToWatched(movie)}>
             <i className="fa-fw far fa-eye"></i>
         </button>
       {/* //delete movie button */}
