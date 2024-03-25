@@ -8,8 +8,8 @@ export default  (state,action) => {
                 ...state,
                 watchlist: [...state.watchlist, action.payload],
             };
-            // delete movie on watchlist
-            case "REMOVE_MOVIE_TO_WATCHLIST":
+            // delete movie FROM watchlist
+            case "REMOVE_MOVIE_FROM_WATCHLIST":
                 return {
                     ...state,
                     watchlist:state.watchlist.filter((movie) => movie.id !== action.payload),
@@ -32,6 +32,13 @@ export default  (state,action) => {
                         watchlist:[...state.watchlist, action.payload]
 
                     }
+
+                    //delete button from watched
+                    case "REMOVE_MOVIE_FROM_WATCHED":
+                        return {
+                            ...state,
+                            watched:state.watched.filter((movie) => movie.id !== action.payload),
+                        };
             default:
                 return state;
     }
