@@ -12,12 +12,14 @@ const Watchlist = () => {
                <h1 className="heading">İzlenecek Filmler</h1>
             </div>
 
-            {watchlist.length >0 && (
+            {watchlist.length >0 ? (
                 <div className="movie-grid">
                     {watchlist.map((movie) => (
                         <MovieCard key={movie.id} movie = {movie} type = {"watchlist"}/>
                     ))}
                 </div>
+            ): (
+                <h2 className="no-movies">Listenizde Film Bulunuamadı ...</h2>
             )}
         </div>
         
